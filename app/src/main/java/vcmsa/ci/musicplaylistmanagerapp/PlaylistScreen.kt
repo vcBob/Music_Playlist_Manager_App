@@ -34,7 +34,11 @@ class MainActivity : AppCompatActivity() {
         val comment = findViewById<Button>(R.id.btnComment)
         val txtComment = findViewById<TextView>(R.id.edtComment)
 
+        // code that calls the exit button.
         val exit = findViewById<Button>(R.id.btnExit)
+
+        //code that calls the details button.
+        val details = findViewById<Button>(R.id.btnDetails)
         //==========================================================================================
 
         //==========================================================================================
@@ -76,6 +80,10 @@ class MainActivity : AppCompatActivity() {
         //The code below allows to user to exit the app.
         exit.setOnClickListener{finishAffinity()}
         //==========================================================================================
+
+        details.setOnClickListener{
+           // val playlistToDetails = Intent(this,)
+        }
 
     }
 }
