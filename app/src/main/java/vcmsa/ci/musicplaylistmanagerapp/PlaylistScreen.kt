@@ -45,10 +45,10 @@ class MainActivity : AppCompatActivity() {
         //==========================================================================================
         // The code below declares variables for arrays and has pre determined data for the user to have examples of what to add.
         val i = 0 // 'i' is used to represent index.
-        val arrSong : Array<String>  //arrayOf("One Dance", "Alright","January 28th","Snooze")
-        val arrArtist :Array<String> //arrayOf("Drake", "Kendrick Lamar", "J.Cole", "SZA")
-        val arrRating : Array<Double> //arrayOf(4,5,5,4)
-        val arrComment : Array<String>//arrayOf("The song is electrifying and makes me dance.","This song makes bad feelings go away","What and experience we got taken on", "This is a great Love song.")
+        val arrSong = arrayOf("One Dance", "Alright","January 28th","Snooze")//: Array<String>
+        val arrArtist = arrayOf("Drake", "Kendrick Lamar", "J.Cole", "SZA") //:Array<String>
+        val arrRating = arrayOf(4,5,5,4) //:Array<Double>
+        val arrComment = arrayOf("The song is electrifying and makes me dance.","This song makes bad feelings go away","What and experience we got taken on", "This is a great Love song.") //:ArrayList<String>//
         //==========================================================================================
 
         //==========================================================================================
@@ -84,10 +84,10 @@ class MainActivity : AppCompatActivity() {
 
         details.setOnClickListener{
             val playlistToDetails = Intent(this, DetailsDisplay::class.java)
-           // playlistToDetails.putExtra("song", arrSong)
-            //playlistToDetails.putExtra("artist", arrArtist)
-           // playlistToDetails.putExtra("rating", arrRating)
-           //playlistToDetails.putExtra("comment", arrComment)
+            playlistToDetails.putExtra("song", arrSong)
+            playlistToDetails.putExtra("artist", arrArtist)
+            playlistToDetails.putExtra("rating", arrRating)
+           playlistToDetails.putExtra("comment", arrComment)
             startActivity(playlistToDetails)
         }
 

@@ -3,6 +3,7 @@ package vcmsa.ci.musicplaylistmanagerapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,6 +20,14 @@ class DetailsDisplay : AppCompatActivity() {
         val show = findViewById<Button>(R.id.btnDisplay)
         val aveRating = findViewById<Button>(R.id.btnAveRating)
         val back = findViewById<Button>(R.id.btnReturn)
+        val txtShow= findViewById<TextView>(R.id.txtDisplay)
+        val index=0
+
+        val arraySong=intent.getIntExtra("comment",arrSong)
+        val arrayArtist=intent.getIntExtra("comment",arrArtist)
+        val arrayRating=intent.getIntExtra("comment",arrRating)
+        val arrayComment=intent.getIntExtra("comment",arrComment)
+
         //==========================================================================================
 
         //==========================================================================================
@@ -31,8 +40,15 @@ class DetailsDisplay : AppCompatActivity() {
         //==========================================================================================
 
         //==========================================================================================
+        // the code below allows the user to see the data they entered in the Playlist screen.
         show.setOnClickListener{
-
+            while (index<=arrayComment.size){// The loop checks if there is any data in the comment array because it is the last array in the to have data entered into.
+            val userSee = StringBuilder()
+                //the code below collects information from the arrays that are called from the playlist screen folder then outputs it into the txtShow textview.
+            userSee.append("Song Name: ${arraySong[index]} \nArtist Name: ${arrayArtist[index]} \nSong rating:${arrayRating[index]} \n Personal comment: ${arrayComment[index]}")
+                txtShow.text=userSee.toString()
+                index = index + 1//index will increase until the while loop condition id true.
+            }
         }
         //==========================================================================================
 
